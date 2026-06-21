@@ -93,4 +93,8 @@
   .jcs-form-row--half {
     grid-template-columns: 1fr;
   }
+
+  .jcs-quote-form {
+    padding: 1.25rem;
+  }
 }

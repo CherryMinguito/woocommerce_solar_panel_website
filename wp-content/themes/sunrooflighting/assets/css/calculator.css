@@ -134,6 +134,22 @@
   margin: 0 0 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .jcs-page {
+    padding: 1.25rem 0 2.5rem;
+  }
+
+  .jcs-page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .jcs-calculator-upload,
+  .jcs-calculator-inputs,
+  .jcs-calculator-results {
+    padding: 1.25rem;
+  }
+}
+
 .jcs-financing-estimate {
   background: var(--jcs-gray-100);
   border-left: 4px solid var(--jcs-yellow);

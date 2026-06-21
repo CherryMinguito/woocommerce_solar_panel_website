@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'JCS_VERSION', '2.0.0' );
+define( 'JCS_VERSION', '2.1.0' );
 define( 'JCS_DIR', get_stylesheet_directory() );
 define( 'JCS_URI', get_stylesheet_directory_uri() );
 
@@ -48,12 +48,14 @@ function jcs_enqueue_assets(): void {
 	wp_enqueue_style( 'jcs-home', JCS_URI . '/assets/css/home.css', array( 'jcs-style' ), JCS_VERSION );
 	wp_enqueue_style( 'jcs-archive', JCS_URI . '/assets/css/archive.css', array( 'jcs-style' ), JCS_VERSION );
 	wp_enqueue_style( 'jcs-forms', JCS_URI . '/assets/css/forms.css', array( 'jcs-style' ), JCS_VERSION );
+	wp_enqueue_style( 'jcs-mobile', JCS_URI . '/assets/css/mobile.css', array( 'jcs-home', 'jcs-archive', 'jcs-forms' ), JCS_VERSION );
 
 	if ( is_page_template( array( 'page-calculator.php', 'page-financing.php' ) ) ) {
 		wp_enqueue_style( 'jcs-calculator', JCS_URI . '/assets/css/calculator.css', array( 'jcs-style' ), JCS_VERSION );
 	}
 
 	wp_enqueue_script( 'jcs-carousel', JCS_URI . '/assets/js/carousel.js', array(), JCS_VERSION, true );
+	wp_enqueue_script( 'jcs-mobile-nav', JCS_URI . '/assets/js/mobile-nav.js', array(), JCS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'jcs_enqueue_assets' );
 

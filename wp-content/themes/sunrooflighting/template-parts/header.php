@@ -32,7 +32,7 @@
 
 <header class="jcs-header">
 	<div class="jcs-container jcs-header-inner">
-		<div class="jcs-header-top">
+		<div class="jcs-header-row">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="jcs-logo">
 				<span class="jcs-logo-mark">☀️</span>
 				<span class="jcs-logo-text">
@@ -50,24 +50,36 @@
 
 			<div class="jcs-header-actions">
 				<a href="<?php echo esc_url( home_url( '/quote/' ) ); ?>" class="jcs-header-link jcs-header-link--cta"><?php esc_html_e( 'Get a Quote', 'sunrooflighting' ); ?></a>
-				<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="jcs-header-link"><?php esc_html_e( 'Account', 'sunrooflighting' ); ?></a>
+				<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="jcs-header-link jcs-header-link--desktop"><?php esc_html_e( 'Account', 'sunrooflighting' ); ?></a>
 				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="jcs-header-link jcs-cart-link">
-					🛒 <?php esc_html_e( 'Cart', 'sunrooflighting' ); ?>
+					<span class="jcs-cart-icon" aria-hidden="true">🛒</span>
+					<span class="jcs-cart-label"><?php esc_html_e( 'Cart', 'sunrooflighting' ); ?></span>
 					<?php if ( function_exists( 'WC' ) && WC()->cart ) : ?>
 						<span class="jcs-cart-count"><?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?></span>
 					<?php endif; ?>
 				</a>
 			</div>
+
+			<button type="button" class="jcs-nav-toggle" aria-expanded="false" aria-controls="jcs-mobile-nav" aria-label="<?php esc_attr_e( 'Open menu', 'sunrooflighting' ); ?>">
+				<span class="jcs-nav-toggle-bar"></span>
+				<span class="jcs-nav-toggle-bar"></span>
+				<span class="jcs-nav-toggle-bar"></span>
+			</button>
 		</div>
 
-		<nav class="jcs-primary-nav" aria-label="<?php esc_attr_e( 'Primary', 'sunrooflighting' ); ?>">
-			<ul>
+		<nav id="jcs-mobile-nav" class="jcs-primary-nav" aria-label="<?php esc_attr_e( 'Primary', 'sunrooflighting' ); ?>">
+			<ul class="jcs-nav-list">
 				<li><a href="<?php echo esc_url( jcs_term_link( 'installation-packages' ) ); ?>"><?php esc_html_e( 'Packages', 'sunrooflighting' ); ?></a></li>
 				<li><a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_html_e( 'Equipment', 'sunrooflighting' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/calculator/' ) ); ?>"><?php esc_html_e( 'Calculator', 'sunrooflighting' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/financing/' ) ); ?>"><?php esc_html_e( 'Financing', 'sunrooflighting' ); ?></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/quote/' ) ); ?>"><?php esc_html_e( 'Contact', 'sunrooflighting' ); ?></a></li>
 			</ul>
+			<div class="jcs-nav-extras">
+				<a href="<?php echo esc_url( home_url( '/quote/' ) ); ?>" class="jcs-btn jcs-btn-quote jcs-nav-cta"><?php esc_html_e( 'Get a Quote', 'sunrooflighting' ); ?></a>
+				<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="jcs-header-link"><?php esc_html_e( 'My Account', 'sunrooflighting' ); ?></a>
+			</div>
 		</nav>
 	</div>
 </header>
+<div class="jcs-nav-overlay" hidden></div>
