@@ -55,6 +55,11 @@ get_header();
 			<a href="<?php echo esc_url( home_url( '/quote/' ) ); ?>" class="jcs-btn"><?php esc_html_e( 'Get Your Free Quote', 'sunrooflighting' ); ?></a>
 			<a href="<?php echo esc_url( home_url( '/calculator/' ) ); ?>" class="jcs-btn jcs-btn-light"><?php esc_html_e( 'Calculate Savings', 'sunrooflighting' ); ?></a>
 		</div>
+
+		<div class="jcs-page-seo-content">
+			<h2><?php esc_html_e( 'Affordable Solar Financing', 'sunrooflighting' ); ?></h2>
+			<p><?php esc_html_e( 'Sunrooflighting offers flexible payment options so you can start saving with solar without a large upfront cost. Pay by credit card for equipment and deposits, or apply for monthly financing on full installations at checkout.', 'sunrooflighting' ); ?></p>
+		</div>
 	</div>
 </main>
 

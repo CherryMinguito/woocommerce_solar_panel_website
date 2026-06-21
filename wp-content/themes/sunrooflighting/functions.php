@@ -7,13 +7,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'JCS_VERSION', '2.1.0' );
+define( 'JCS_VERSION', '2.2.1' );
 define( 'JCS_DIR', get_stylesheet_directory() );
 define( 'JCS_URI', get_stylesheet_directory_uri() );
 
 require_once JCS_DIR . '/inc/class-ocr-processor.php';
 require_once JCS_DIR . '/inc/class-quote-handler.php';
 require_once JCS_DIR . '/inc/class-calculator.php';
+require_once JCS_DIR . '/inc/class-seo.php';
 
 function jcs_setup(): void {
 	add_theme_support( 'title-tag' );
@@ -49,6 +50,7 @@ function jcs_enqueue_assets(): void {
 	wp_enqueue_style( 'jcs-archive', JCS_URI . '/assets/css/archive.css', array( 'jcs-style' ), JCS_VERSION );
 	wp_enqueue_style( 'jcs-forms', JCS_URI . '/assets/css/forms.css', array( 'jcs-style' ), JCS_VERSION );
 	wp_enqueue_style( 'jcs-mobile', JCS_URI . '/assets/css/mobile.css', array( 'jcs-home', 'jcs-archive', 'jcs-forms' ), JCS_VERSION );
+	wp_enqueue_style( 'jcs-seo', JCS_URI . '/assets/css/seo.css', array( 'jcs-style' ), JCS_VERSION );
 
 	if ( is_page_template( array( 'page-calculator.php', 'page-financing.php' ) ) ) {
 		wp_enqueue_style( 'jcs-calculator', JCS_URI . '/assets/css/calculator.css', array( 'jcs-style' ), JCS_VERSION );
@@ -62,6 +64,7 @@ add_action( 'wp_enqueue_scripts', 'jcs_enqueue_assets' );
 function jcs_init_features(): void {
 	JCS_Quote_Handler::init();
 	JCS_Calculator::init();
+	JCS_SEO::init();
 }
 add_action( 'init', 'jcs_init_features' );
 
@@ -318,26 +321,42 @@ function jcs_get_template_part( string $slug, array $args = array() ): void {
 }
 
 function jcs_archive_title(): string {
-	global $wp_query;
+	return jcs_archive_heading();
+}
 
+function jcs_archive_heading(): string {
 	if ( is_product_category() ) {
 		$term = get_queried_object();
 		if ( $term && isset( $term->name ) ) {
-			$count = isset( $wp_query->found_posts ) ? (int) $wp_query->found_posts : (int) ( $term->count ?? 0 );
-			return sprintf(
-				__( '%1$s (%2$d items found)', 'sunrooflighting' ),
-				$term->name,
-				$count
-			);
+			return $term->name;
 		}
 	}
 
 	if ( is_shop() ) {
-		$count = isset( $wp_query->found_posts ) ? (int) $wp_query->found_posts : 0;
-		return sprintf( __( 'All Products (%d items found)', 'sunrooflighting' ), $count );
+		return __( 'Solar Equipment & Installation Packages', 'sunrooflighting' );
 	}
 
 	return __( 'Products', 'sunrooflighting' );
+}
+
+function jcs_archive_count_label(): string {
+	global $wp_query;
+
+	$count = isset( $wp_query->found_posts ) ? (int) $wp_query->found_posts : 0;
+
+	if ( is_product_category() ) {
+		return sprintf(
+			/* translators: %d: number of products */
+			_n( '%d product found', '%d products found', $count, 'sunrooflighting' ),
+			$count
+		);
+	}
+
+	return sprintf(
+		/* translators: %d: number of products */
+		_n( '%d item found', '%d items found', $count, 'sunrooflighting' ),
+		$count
+	);
 }
 
 function jcs_woocommerce_template_path(): string {

@@ -13,6 +13,9 @@ config:
         - apt-get install -y tesseract-ocr poppler-utils
       env_file:
         - .env
+      overrides:
+        volumes:
+          - ./wp-content/themes/sunrooflighting:/app/wp/wp-content/themes/sunrooflighting
 
 tooling:
   bootstrap:
@@ -27,6 +30,10 @@ tooling:
     service: appserver
     description: Push Stripe test keys from .env into WooCommerce
     cmd: bash /app/setup/sync-stripe.sh
+  theme-sync:
+    service: appserver
+    description: Sync theme files into the WordPress webroot
+    cmd: bash -c "mkdir -p /app/wp/wp-content/themes && cp -r /app/wp-content/themes/sunrooflighting /app/wp/wp-content/themes/"
 
 events:
   post-start:

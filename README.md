@@ -95,9 +95,28 @@ lando info           # Show URLs and connection info
 - **Installation Packages** → Residential, Commercial
 - **Solar Panels**, **Inverters**, **Batteries & Storage**, **Accessories**
 
-## Development
+## SEO
 
-The child theme lives in `wp-content/themes/sunrooflighting/` and is synced into the Lando webroot on start. Edit theme files and refresh the browser.
+The theme includes built-in SEO (no plugin required):
+
+- **Meta description** and **keywords** on every page
+- **Open Graph** and **Twitter Card** tags for social sharing
+- **Canonical URLs** and **robots** meta
+- **JSON-LD structured data**: Organization, WebSite, LocalBusiness, Product, BreadcrumbList
+- **Custom meta description** field in the page/product editor (SEO Description meta box)
+
+For best results, set a **Site Icon** in WordPress (Appearance → Customize) — it is used as the default Open Graph image.
+
+Fresh installs set page excerpts and site tagline via `lando bootstrap`.
+
+
+The child theme lives in `wp-content/themes/sunrooflighting/`. Lando bind-mounts it into the webroot automatically after `lando restart`. If meta tags or theme changes do not appear, run:
+
+```bash
+lando restart
+# or manually:
+lando theme-sync
+```
 
 ## Going Live
 

@@ -16,6 +16,7 @@ get_header();
 	jcs_get_template_part( 'home/promos' );
 	jcs_get_template_part( 'home/brands' );
 	jcs_get_template_part( 'home/services' );
+	jcs_get_template_part( 'home/seo-content' );
 	?>
 </main>
 

@@ -278,7 +278,8 @@
     padding: 2rem 1.25rem;
   }
 
-  .jcs-hero-content h2 {
+  .jcs-hero-content h2,
+  .jcs-hero-content .jcs-hero-title {
     font-size: 1.35rem;
     line-height: 1.25;
   }

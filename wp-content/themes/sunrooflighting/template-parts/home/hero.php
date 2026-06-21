@@ -10,7 +10,7 @@
 		<div class="jcs-hero-carousel" data-carousel>
 			<div class="jcs-hero-slide is-active" style="background: linear-gradient(135deg, #1c83c6 0%, #0e4d7a 100%);">
 				<div class="jcs-hero-content">
-					<h2><?php esc_html_e( 'Power Your Home with Solar', 'sunrooflighting' ); ?></h2>
+					<h1 class="jcs-hero-title"><?php esc_html_e( 'Power Your Home with Solar', 'sunrooflighting' ); ?></h1>
 					<p><?php esc_html_e( 'Professional solar installation with flexible financing. Start saving on day one.', 'sunrooflighting' ); ?></p>
 					<a href="<?php echo esc_url( home_url( '/quote/' ) ); ?>" class="jcs-btn jcs-btn-light"><?php esc_html_e( 'Get a Free Quote', 'sunrooflighting' ); ?></a>
 				</div>

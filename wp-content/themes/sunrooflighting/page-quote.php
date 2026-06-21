@@ -29,6 +29,11 @@ $status  = isset( $_GET['quote'] ) ? sanitize_text_field( wp_unslash( $_GET['quo
 		<?php endif; ?>
 
 		<?php echo do_shortcode( '[solar_quote_form package="' . esc_attr( $package ) . '"]' ); ?>
+
+		<div class="jcs-page-seo-content">
+			<h2><?php esc_html_e( 'What Happens After You Request a Quote?', 'sunrooflighting' ); ?></h2>
+			<p><?php esc_html_e( 'A Sunrooflighting solar specialist reviews your property details and energy goals, then prepares a custom proposal with system specifications, projected savings, financing options, and installation timeline — usually within one business day.', 'sunrooflighting' ); ?></p>
+		</div>
 	</div>
 </main>
 

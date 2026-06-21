@@ -98,10 +98,13 @@ create_page() {
   local title="$1"
   local slug="$2"
   local template="$3"
+  local excerpt="${4:-}"
   local existing
   existing=$($WP post list --post_type=page --name="$slug" --field=ID --path="$WP_PATH" 2>/dev/null || echo "")
   if [[ -z "$existing" ]]; then
-    existing=$($WP post create --post_type=page --post_title="$title" --post_name="$slug" --post_status=publish --porcelain --path="$WP_PATH")
+    existing=$($WP post create --post_type=page --post_title="$title" --post_name="$slug" --post_status=publish --post_excerpt="$excerpt" --porcelain --path="$WP_PATH")
+  elif [[ -n "$excerpt" ]]; then
+    $WP post update "$existing" --post_excerpt="$excerpt" --path="$WP_PATH"
   fi
   if [[ -n "$template" ]]; then
     $WP post meta update "$existing" _wp_page_template "$template" --path="$WP_PATH"
@@ -109,13 +112,23 @@ create_page() {
   echo "$existing"
 }
 
-FRONT_PAGE_ID=$(create_page "Home" "home" "")
+echo "==> Setting site tagline and SEO defaults"
+$WP option update blogdescription "Professional solar panel installation, free quotes, and flexible financing in Arizona." --path="$WP_PATH"
+
+FRONT_PAGE_ID=$(create_page "Home" "home" "" "Sunrooflighting — professional residential and commercial solar installation, savings calculator, and free quotes.")
 $WP option update show_on_front page --path="$WP_PATH"
 $WP option update page_on_front "$FRONT_PAGE_ID" --path="$WP_PATH"
 
-create_page "Savings Calculator" "calculator" "page-calculator.php" >/dev/null
-create_page "Get a Quote" "quote" "page-quote.php" >/dev/null
-create_page "Financing" "financing" "page-financing.php" >/dev/null
+echo "==> Downloading default Open Graph image"
+mkdir -p "$ROOT_DIR/wp-content/themes/sunrooflighting/assets/images"
+if [[ ! -f "$ROOT_DIR/wp-content/themes/sunrooflighting/assets/images/og-default.jpg" ]]; then
+  curl -sL "https://picsum.photos/seed/sunrooflighting-og/1200/630" -o "$ROOT_DIR/wp-content/themes/sunrooflighting/assets/images/og-default.jpg" || true
+fi
+cp -r "$ROOT_DIR/wp-content/themes/sunrooflighting" "$WP_PATH/wp-content/themes/"
+
+create_page "Savings Calculator" "calculator" "page-calculator.php" "Upload your utility bill and get an instant solar savings estimate with system size, cost, and payback period." >/dev/null
+create_page "Get a Quote" "quote" "page-quote.php" "Request a free personalized solar installation quote from Sunrooflighting. Response within 1 business day." >/dev/null
+create_page "Financing" "financing" "page-financing.php" "Flexible solar financing and credit card payment options for your solar installation." >/dev/null
 
 echo "==> Configuring Stripe (test mode)"
 STRIPE_PUB="${STRIPE_TEST_PUBLISHABLE_KEY:-}"
