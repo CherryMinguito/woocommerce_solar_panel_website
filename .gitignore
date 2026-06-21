@@ -1,0 +1,21 @@
+# WordPress core (downloaded by setup)
+/wp/
+
+# Environment secrets
+.env
+
+# Lando
+.lando.local.yml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Uploads (generated at runtime)
+wp-content/uploads/

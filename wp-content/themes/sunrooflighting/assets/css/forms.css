@@ -1,0 +1,96 @@
+/**
+ * Form styles for quote and financing.
+ */
+
+.jcs-form-row {
+  margin-bottom: 1rem;
+}
+
+.jcs-form-row--half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.jcs-form-field {
+  margin-bottom: 1rem;
+}
+
+.jcs-form-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.jcs-form-field input,
+.jcs-form-field select,
+.jcs-form-field textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.jcs-form-field input:focus,
+.jcs-form-field select:focus,
+.jcs-form-field textarea:focus {
+  outline: none;
+  border-color: var(--jcs-red);
+  box-shadow: 0 0 0 3px rgba(28, 131, 198, 0.15);
+}
+
+.jcs-form-field small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--jcs-gray-500);
+  font-size: 0.8rem;
+}
+
+.jcs-quote-form {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 2rem;
+}
+
+.jcs-notice {
+  padding: 1rem 1.25rem;
+  border-radius: var(--jcs-radius);
+  margin-bottom: 1.5rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jcs-notice--success {
+  background: #e6f7ed;
+  color: var(--jcs-green);
+  border: 1px solid var(--jcs-green);
+}
+
+.jcs-notice--error {
+  background: #fde8e8;
+  color: #c53030;
+  border: 1px solid #c53030;
+}
+
+.jcs-financing-fields {
+  margin-top: 1rem;
+}
+
+.jcs-financing-note {
+  font-size: 0.85rem;
+  color: var(--jcs-gray-500);
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .jcs-form-row--half {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,148 @@
+/**
+ * Calculator styles.
+ */
+
+.jcs-page {
+  padding: 2rem 0 4rem;
+}
+
+.jcs-page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.jcs-page-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.75rem;
+  color: var(--jcs-charcoal);
+}
+
+.jcs-page-header p {
+  color: var(--jcs-gray-700);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.jcs-calculator {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.jcs-calculator-upload,
+.jcs-calculator-inputs,
+.jcs-calculator-results {
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.jcs-calculator-upload h3,
+.jcs-calculator-inputs h3,
+.jcs-calculator-results h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.jcs-upload-zone {
+  border: 2px dashed var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+.jcs-upload-zone:hover,
+.jcs-upload-zone.is-dragover {
+  border-color: var(--jcs-red);
+  background: var(--jcs-gray-100);
+}
+
+.jcs-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--jcs-gray-700);
+}
+
+.jcs-upload-icon {
+  font-size: 2.5rem;
+}
+
+.jcs-ocr-status {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--jcs-radius);
+  font-size: 0.9rem;
+}
+
+.jcs-ocr-status--loading {
+  background: var(--jcs-gray-100);
+  color: var(--jcs-gray-700);
+}
+
+.jcs-ocr-status--success {
+  background: #e6f7ed;
+  color: var(--jcs-green);
+}
+
+.jcs-ocr-status--warning {
+  background: #fff8e6;
+  color: #b8860b;
+}
+
+.jcs-ocr-status--error {
+  background: #fde8e8;
+  color: #c53030;
+}
+
+.jcs-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.jcs-result-card {
+  background: var(--jcs-gray-100);
+  border-radius: var(--jcs-radius);
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.jcs-result-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--jcs-red);
+  margin-bottom: 0.25rem;
+}
+
+.jcs-result-label {
+  font-size: 0.8rem;
+  color: var(--jcs-gray-700);
+}
+
+.jcs-results-disclaimer {
+  font-size: 0.85rem;
+  color: var(--jcs-gray-500);
+  margin: 0 0 1.5rem;
+}
+
+.jcs-financing-estimate {
+  background: var(--jcs-gray-100);
+  border-left: 4px solid var(--jcs-yellow);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0 var(--jcs-radius) var(--jcs-radius) 0;
+}
+
+.jcs-financing-estimate p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}

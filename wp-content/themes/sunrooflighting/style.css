@@ -1,0 +1,108 @@
+/*
+Theme Name: Sunrooflighting
+Theme URI: https://sunrooflighting.com
+Description: Custom Storefront child theme for Sunrooflighting — residential and commercial solar installation.
+Author: Sunrooflighting
+Template: storefront
+Version: 2.0.0
+Text Domain: sunrooflighting
+*/
+
+:root {
+  --jcs-red: #1c83c6;
+  --jcs-red-dark: #1565a0;
+  --jcs-charcoal: #1a2a3a;
+  --jcs-gray-900: #2d3748;
+  --jcs-gray-700: #4a5568;
+  --jcs-gray-500: #718096;
+  --jcs-gray-300: #cbd5e0;
+  --jcs-gray-100: #f7fafc;
+  --jcs-white: #ffffff;
+  --jcs-yellow: #f5a623;
+  --jcs-green: #2e9e5b;
+  --jcs-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --jcs-max-width: 1280px;
+  --jcs-radius: 6px;
+  --jcs-shadow: 0 2px 12px rgba(28, 131, 198, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--jcs-font);
+  color: var(--jcs-gray-900);
+  background: var(--jcs-white);
+}
+
+a {
+  color: var(--jcs-red);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--jcs-red-dark);
+  text-decoration: underline;
+}
+
+.jcs-container {
+  max-width: var(--jcs-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.storefront-primary-navigation,
+.storefront-breadcrumb {
+  display: none;
+}
+
+.site-header {
+  display: none !important;
+}
+
+.site-footer {
+  display: none !important;
+}
+
+.woocommerce-active .site-content {
+  padding-top: 0;
+}
+
+button,
+.button,
+input[type="submit"] {
+  background: var(--jcs-red);
+  color: var(--jcs-white);
+  border: none;
+  border-radius: var(--jcs-radius);
+  padding: 0.65rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover {
+  background: var(--jcs-red-dark);
+  color: var(--jcs-white);
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.jcs-btn-quote {
+  background: var(--jcs-green);
+}
+
+.jcs-btn-quote:hover {
+  background: #248a4d;
+}

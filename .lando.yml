@@ -1,0 +1,33 @@
+name: sunrooflighting
+recipe: wordpress
+config:
+  webroot: wp
+  php: '8.2'
+  via: apache
+  database: mysql
+  xdebug: false
+  services:
+    appserver:
+      build_as_root:
+        - apt-get update -y
+        - apt-get install -y tesseract-ocr poppler-utils
+      env_file:
+        - .env
+
+tooling:
+  bootstrap:
+    service: appserver
+    description: Bootstrap WordPress, WooCommerce, theme, and demo data
+    cmd: bash /app/setup/setup.sh
+  seed:
+    service: appserver
+    description: Re-run demo product/category seeder
+    cmd: wp eval-file /app/setup/seed.php --path=/app/wp
+  stripe-sync:
+    service: appserver
+    description: Push Stripe test keys from .env into WooCommerce
+    cmd: bash /app/setup/sync-stripe.sh
+
+events:
+  post-start:
+    - appserver: bash -c "mkdir -p /app/wp/wp-content/themes && cp -r /app/wp-content/themes/sunrooflighting /app/wp/wp-content/themes/ 2>/dev/null || true"

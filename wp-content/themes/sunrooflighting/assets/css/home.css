@@ -1,0 +1,681 @@
+/* Jed Construction Supply — Homepage styles */
+
+/* Promo bar */
+.jcs-promo-bar {
+  background: var(--jcs-charcoal);
+  color: var(--jcs-white);
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+}
+
+.jcs-promo-bar .jcs-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.jcs-promo-carousel {
+  flex: 1;
+  position: relative;
+  min-height: 1.5rem;
+}
+
+.jcs-promo-slide {
+  display: none;
+}
+
+.jcs-promo-slide.is-active {
+  display: block;
+}
+
+.jcs-promo-slide a {
+  color: var(--jcs-yellow);
+  margin-left: 0.5rem;
+  text-decoration: underline;
+}
+
+.jcs-promo-pause {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--jcs-white);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Header */
+.jcs-header {
+  background: var(--jcs-white);
+  border-bottom: 3px solid var(--jcs-red);
+  box-shadow: var(--jcs-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.jcs-header-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.jcs-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--jcs-charcoal);
+  flex-shrink: 0;
+}
+
+.jcs-logo:hover {
+  text-decoration: none;
+  color: var(--jcs-charcoal);
+}
+
+.jcs-logo-mark {
+  background: var(--jcs-red);
+  color: var(--jcs-white);
+  font-weight: 800;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--jcs-radius);
+}
+
+.jcs-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.jcs-logo-text strong {
+  font-size: 1.1rem;
+}
+
+.jcs-logo-text small {
+  font-size: 0.75rem;
+  color: var(--jcs-gray-500);
+}
+
+.jcs-search-form {
+  flex: 1;
+  display: flex;
+  min-width: 200px;
+  max-width: 560px;
+}
+
+.jcs-search-form input[type="search"] {
+  flex: 1;
+  border: 2px solid var(--jcs-gray-300);
+  border-right: none;
+  border-radius: var(--jcs-radius) 0 0 var(--jcs-radius);
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+}
+
+.jcs-search-form button {
+  border-radius: 0 var(--jcs-radius) var(--jcs-radius) 0;
+  padding: 0.65rem 1rem;
+}
+
+.jcs-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.jcs-header-link {
+  color: var(--jcs-gray-900);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.jcs-header-link:hover {
+  color: var(--jcs-red);
+}
+
+.jcs-cart-count {
+  background: var(--jcs-red);
+  color: var(--jcs-white);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.25rem;
+}
+
+.jcs-primary-nav {
+  border-top: 1px solid var(--jcs-gray-100);
+  padding: 0.5rem 0;
+}
+
+.jcs-primary-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jcs-primary-nav a {
+  color: var(--jcs-charcoal);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+
+.jcs-primary-nav a:hover {
+  color: var(--jcs-red);
+}
+
+/* Hero */
+.jcs-hero {
+  padding: 0;
+}
+
+.jcs-hero-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.jcs-hero-slide {
+  display: none;
+  min-height: 320px;
+  padding: 3rem 2rem;
+  color: var(--jcs-white);
+}
+
+.jcs-hero-slide.is-active {
+  display: flex;
+  align-items: center;
+}
+
+.jcs-hero-content h2 {
+  font-size: 2.25rem;
+  margin: 0 0 0.75rem;
+  color: var(--jcs-white);
+}
+
+.jcs-hero-content p {
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem;
+  opacity: 0.9;
+}
+
+.jcs-btn {
+  display: inline-block;
+  background: var(--jcs-red);
+  color: var(--jcs-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--jcs-radius);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.jcs-btn:hover {
+  background: var(--jcs-red-dark);
+  color: var(--jcs-white);
+  text-decoration: none;
+}
+
+.jcs-btn-light {
+  background: var(--jcs-white);
+  color: var(--jcs-red);
+}
+
+.jcs-btn-light:hover {
+  background: var(--jcs-gray-100);
+  color: var(--jcs-red-dark);
+}
+
+.jcs-hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.jcs-hero-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--jcs-gray-300);
+  border: none;
+  padding: 0;
+}
+
+.jcs-hero-dots button.is-active {
+  background: var(--jcs-red);
+}
+
+/* Sections */
+.jcs-section {
+  padding: 3rem 0;
+}
+
+.jcs-section:nth-child(even) {
+  background: var(--jcs-gray-100);
+}
+
+.jcs-section-title {
+  font-size: 1.75rem;
+  text-align: center;
+  margin: 0 0 2rem;
+  color: var(--jcs-charcoal);
+}
+
+/* Category grid */
+.jcs-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.jcs-category-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--jcs-gray-900);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.jcs-category-tile:hover {
+  border-color: var(--jcs-red);
+  box-shadow: var(--jcs-shadow);
+  text-decoration: none;
+  color: var(--jcs-red);
+}
+
+.jcs-category-icon {
+  font-size: 2rem;
+}
+
+.jcs-category-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Promo cards */
+.jcs-promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.jcs-promo-card {
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 1.5rem;
+}
+
+.jcs-promo-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.jcs-promo-card p {
+  color: var(--jcs-gray-700);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.jcs-promo-card--accent {
+  background: var(--jcs-red);
+  color: var(--jcs-white);
+  border-color: var(--jcs-red);
+}
+
+.jcs-promo-card--accent h3,
+.jcs-promo-card--accent p {
+  color: var(--jcs-white);
+}
+
+.jcs-promo-card--accent a {
+  color: var(--jcs-yellow);
+}
+
+.jcs-email-signup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.jcs-email-signup input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--jcs-radius);
+}
+
+.jcs-email-signup button {
+  background: var(--jcs-charcoal);
+  white-space: nowrap;
+}
+
+/* Featured deals (WooCommerce shortcode) */
+.jcs-featured-deals .products {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jcs-featured-deals .products::before,
+.jcs-featured-deals .products::after {
+  display: none;
+}
+
+/* Brands */
+.jcs-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.jcs-brand-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 1.5rem 1rem;
+  text-decoration: none;
+  color: var(--jcs-gray-900);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 80px;
+  transition: border-color 0.2s;
+}
+
+.jcs-brand-tile:hover {
+  border-color: var(--jcs-red);
+  color: var(--jcs-red);
+  text-decoration: none;
+}
+
+/* Shop ways */
+.jcs-shop-ways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.jcs-shop-way {
+  background: var(--jcs-white);
+  border-radius: var(--jcs-radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--jcs-shadow);
+}
+
+.jcs-shop-way-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.jcs-shop-way h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.jcs-shop-way p {
+  font-size: 0.85rem;
+  color: var(--jcs-gray-700);
+  margin: 0;
+}
+
+/* Services */
+.jcs-services-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.jcs-services-text h2 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.jcs-services-placeholder {
+  background: var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--jcs-gray-700);
+  font-weight: 600;
+}
+
+/* Reasons */
+.jcs-reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.jcs-reason-card {
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 1.5rem;
+}
+
+.jcs-reason-card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.jcs-reason-card p {
+  color: var(--jcs-gray-700);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.jcs-footer {
+  background: var(--jcs-charcoal);
+  color: var(--jcs-gray-300);
+  padding: 3rem 0 1rem;
+}
+
+.jcs-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.jcs-footer-col h4 {
+  color: var(--jcs-white);
+  margin: 0 0 1rem;
+}
+
+.jcs-footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jcs-footer-col li {
+  margin-bottom: 0.5rem;
+}
+
+.jcs-footer-col a {
+  color: var(--jcs-gray-300);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.jcs-footer-col a:hover {
+  color: var(--jcs-white);
+}
+
+.jcs-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.jcs-section-subtitle {
+  text-align: center;
+  color: var(--jcs-gray-700);
+  margin: -1rem 0 2rem;
+}
+
+/* Package cards */
+.jcs-package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.jcs-package-card {
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.jcs-package-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.jcs-package-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--jcs-red);
+  margin-bottom: 0.75rem;
+}
+
+.jcs-package-price small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--jcs-gray-500);
+}
+
+.jcs-package-desc {
+  font-size: 0.9rem;
+  color: var(--jcs-gray-700);
+  flex: 1;
+  margin: 0 0 1rem;
+}
+
+.jcs-package-specs {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--jcs-gray-700);
+}
+
+.jcs-package-specs li::before {
+  content: "✓ ";
+  color: var(--jcs-green);
+}
+
+.jcs-header-link--cta {
+  background: var(--jcs-green);
+  color: var(--jcs-white) !important;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--jcs-radius);
+  font-weight: 600;
+}
+
+.jcs-header-link--cta:hover {
+  background: #248a4d;
+  color: var(--jcs-white) !important;
+  text-decoration: none;
+}
+
+.jcs-badge--quote {
+  background: var(--jcs-yellow);
+  color: var(--jcs-charcoal);
+}
+
+.jcs-financing-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.jcs-financing-card {
+  background: var(--jcs-white);
+  border: 1px solid var(--jcs-gray-300);
+  border-radius: var(--jcs-radius);
+  padding: 2rem;
+}
+
+.jcs-financing-card--highlight {
+  border-color: var(--jcs-red);
+  border-width: 2px;
+}
+
+.jcs-financing-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.jcs-financing-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jcs-header-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .jcs-search-form {
+    max-width: none;
+  }
+
+  .jcs-primary-nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .jcs-hero-slide {
+    min-height: 240px;
+    padding: 2rem 1rem;
+  }
+
+  .jcs-hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .jcs-services-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .jcs-email-signup {
+    flex-direction: column;
+  }
+}
